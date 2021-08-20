@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-action-list>
+
+        <div mat-subheader>Menu</div>
+        <button class="ml20" routerLink = '/admin' mat-list-item><mat-icon mat-list-icon>home</mat-icon>Home</button>
+        
+        <mat-divider></mat-divider>
+        <button class="ml20" mat-list-item routerLink = '/admin/profile'><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
+        
+        <mat-divider></mat-divider>
+        <mat-card class = "mtd20 ">
+            <button mat-list-item routerLink = '/admin/view-usergroup'><mat-icon mat-list-icon>group</mat-icon>Usergroups</button>
+            <button mat-list-item routerLink = '/admin/add-usergroup'><mat-icon mat-list-icon>group_add</mat-icon>Add User group</button>
+        </mat-card>
+        
+        <mat-divider></mat-divider>
+        <mat-card class = "mt40">
+            <button mat-list-item routerLink = '/admin/view-user'><mat-icon mat-list-icon>person</mat-icon>Users</button>
+            <button mat-list-item routerLink = '/admin/add-user'><mat-icon mat-list-icon>person_add</mat-icon>Add User</button>
+        </mat-card>
+        
+    </mat-action-list>
+</mat-card>

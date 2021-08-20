@@ -1,0 +1,57 @@
+<mat-card>
+    <h1>Update User</h1>
+    <!-- {{category |json}} -->
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <form (ngSubmit) = formSubmit()>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>User Name</mat-label>
+                            <input [(ngModel)] = "user.username" name = "name" matInput placeholder="type here" required >
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input [(ngModel)] = "user.firstName" name = "firstname" matInput placeholder="type here" required >
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input [(ngModel)] = "user.lastName" name = "lastName" matInput placeholder="type here" required >
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email Id</mat-label>
+                            <input [(ngModel)] = "user.emailId" name = "email" matInput placeholder="type here" required >
+                        </mat-form-field>
+    
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Role</mat-label>
+                            <input [(ngModel)] = "user.role" name = "role" matInput placeholder="type here" required >
+                        </mat-form-field>
+
+                        <mat-slide-toggle name = "active" [(ngModel)] = "user.enabled" >Active</mat-slide-toggle>
+
+                        <br>
+                        <br>
+
+                        <mat-form-field appearance="fill" class ="full-width">
+                            <mat-label>Select UserGroup</mat-label>
+                            <mat-select name = "usergroup" [(ngModel)] = "user.userGroupId">
+                                <mat-option *ngFor="let ug of userGroup" [value]= "ug.groupId">
+                                {{ug.groupName}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class = "container text-center">
+                            <button type = "submit" mat-raised-button color="primary" style="margin-right: 20px;">Update</button>
+                            <button type = "reset" mat-raised-button color="accent">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>       
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,38 @@
+<mat-card>
+    <h1>Update User Group</h1>
+    <!-- {{category |json}} -->
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <form *ngIf = "userGroup" (ngSubmit) = "formSubmit()">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Group Name</mat-label>
+                            <input [(ngModel)] = "userGroup.groupName" name = "name" matInput placeholder="type here" required >
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Group Type</mat-label>
+                            <input [(ngModel)] = "userGroup.groupType" name = "groupType" matInput placeholder="type here" required >
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Group Email Id</mat-label>
+                            <input [(ngModel)] = "userGroup.groupEmail" name = "email" matInput placeholder="type here" required >
+                        </mat-form-field>
+    
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Group Description</mat-label>
+                            <textarea [(ngModel)] = "userGroup.groupDescription" name = "description" matInput placeholder="type here" rows="8" ></textarea>
+                        </mat-form-field>
+    
+                        <div class = "container text-center">
+                            <button type = "submit" mat-raised-button color="primary" style="margin-right: 20px;">Update</button>
+                            <button type = "reset" mat-raised-button color="accent">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>       
+    </mat-card-content>
+</mat-card>

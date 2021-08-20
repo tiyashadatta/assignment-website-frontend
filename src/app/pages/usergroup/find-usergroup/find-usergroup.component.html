@@ -1,0 +1,38 @@
+<mat-card *ngIf = "userGroup">
+    <h1>User Group Details</h1>
+    <!-- {{user | json}} -->
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="../../../../assets/group-therapy.png" alt="no image displayed" class="profile-image">
+                    <h1 class="mt20">{{userGroup.groupName}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr>
+                                <td>Type</td>
+                                <td>{{userGroup.groupType}}</td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>{{userGroup.groupDescription}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email Id</td>
+                                <td>{{userGroup.groupEmail}}</td>
+                            </tr>
+                            <tr>
+                                <td>List of Users</td>
+                                <td>
+                                    <button [routerLink] = "'/admin/view-users-of-usergroup/' + userGroup.groupId" mat-flat-button color="primary">Click to view List of Users in this User Group</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

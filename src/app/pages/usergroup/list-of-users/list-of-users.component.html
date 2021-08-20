@@ -1,0 +1,25 @@
+<mat-card *ngIf = "userGroup">
+    <h1 class="mt20">List of Users in Group : {{userGroup.groupName}}</h1>
+    <!-- {{user | json}} -->
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="../../../../assets/attendant-list.png" alt="no image displayed" class="profile-image">   
+                </div>
+                <div class="row mt20">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr *ngFor = "let u of userGroup.users, let i = index">
+                                <td>User {{i + 1}}</td>
+                                <td>
+                                    {{userGroup.users[i].firstName}} {{userGroup.users[i].lastName}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
